@@ -67,22 +67,6 @@ func (node *Node) Search(val int) bool {
 	return true
 }
 
-func (node *Node) Remove(val int) {
-	if node.Value < val {
-		if node.Right == nil {
-			node.Right = &Node{Value: val}
-		} else {
-			node.Right.Insert(val)
-		}
-	} else if node.Value > val {
-		if node.Left == nil {
-			node.Left = &Node{Value: val}
-		} else {
-			node.Left.Insert(val)
-		}
-	}
-}
-
 func main() {
 	fmt.Println("Binary Search Tree")
 	n := &Node{Value: 100}
@@ -95,12 +79,12 @@ func main() {
 
 	fmt.Println("Root: ", n)
 
-	/*fmt.Println("PreOrder")
+	fmt.Println("PreOrder")
 	PreOrder(n)
 	fmt.Println("InOrder")
 	InOrder(n)
 	fmt.Println("PostOrder")
-	PostOrder(n)*/
+	PostOrder(n)
 	fmt.Println("Search function")
 	fmt.Println(n.Search(120))
 	fmt.Println(n.Search(45))
